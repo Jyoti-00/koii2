@@ -5,10 +5,10 @@
 
 ## Task Name ##
 # Maximum 24 characters.
-task_name: "Task Name"
+task_name: "iNFiNEX"
 
 ## Task Author ##
-author: "Koii"
+author: "Jyotirmoy Das Deep and Abdur Razzak"
 
 # Task Description Markdown ##
 # If you specify a markdown file, the description field will be ignored.
@@ -17,7 +17,7 @@ markdownDescriptionPath: "./TaskDescription.md"
 
 ## Task Description ##
 # Ignored if you specify a markdown file.
-description: "Task description."
+description: "We are building a Trustless Escrow System for high-value asset transactions on the Koii Network. This dApp manages the escrow process for assets like luxury items or real estate, utilizing a trustless, compliant, and secure environment for escrow management. The Koii Node processes include real-time verification and distribution list generation, where submissions are validated and results are audited."
 
 ## Repository URL ##
 # Must be public for whitelisted tasks.
@@ -66,7 +66,7 @@ task_type: "KPL"
 
 ## Token Mint Address (ONLY for KPL tasks) ##
 # The Fire Token address is provided as an example.
-token_type: "FJG2aEPtertCXoedgteCCMmgngSZo1Zd715oNBzR7xpR"
+token_type: "8tCwNe1X9ZGSifGSRDgZHjeVLuhzcYZJBndLNRxx3cUk"
 
 ## Total Bounty Amount ##
 # The total bounty amount that will be available for distribution over all rounds.
@@ -76,7 +76,7 @@ total_bounty_amount: 10
 ## Bounty Amount per Round ##
 # The maximum amount that can be distributed per round.
 # If the actual distribution per round exceeds this amount, the distribution list will fail.
-bounty_amount_per_round: 0.1
+bounty_amount_per_round: 0
 
 ## Allowed Failed Distributions ##
 # Number of retries allowed for the distribution list if it is fails audit.
@@ -88,7 +88,7 @@ allowed_failed_distributions: 3
 # Expected Task Data Size in MBs for the account size.
 # Minimums: 2 for whitelisted tasks, 1 for production, 0.1 for testing.
 # See https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#space for calculation details.
-space: 0.1
+space: 1
 
 ## Requirement Tags (Optional) ##
 # To add more global variables and task variables, please refer to the type, value, description format shown below.
@@ -99,18 +99,18 @@ requirementsTags:
     value: "5 GB"
   - type: STORAGE
     value: "5 GB"
-  - type: TASK_VARIABLE
-    value: "TEST_VARIABLE"
-    description: "An example to demonstrate the use of task variables."
+  # - type: TASK_VARIABLE
+  #   value: "TEST_VARIABLE"
+  #   description: "An example to demonstrate the use of task variables."
 
 ## Tags ##
 # See https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#tags for available tag options.
-tags: ["Witness"]
+tags: ["Encode London"]
 
 # Environment ##
 # TEST or PRODUCTION
 # Production mode will expose your task to all the task runners, even if not whitelisted.
-environment: "TEST"
+environment: "PRODUCTION"
 
 #################################### FOR UPDATING TASKS ONLY ####################################
 

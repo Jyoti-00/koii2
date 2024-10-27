@@ -8,10 +8,23 @@ export async function audit(submission, roundNumber, submitterKey) {
         const verifications = JSON.parse(submission);
 
         // Ensure each verification is confirmed as `true`
-        return verifications.insurance.isVerified && 
-               verifications.inspection.isVerified && 
-               verifications.custody.isVerified && 
-               verifications.compliance.isVerified;
+        // return verifications.insurance.isVerified && 
+        //        verifications.inspection.isVerified && 
+        //        verifications.custody.isVerified && 
+        //        verifications.compliance.isVerified;
+
+
+        let vote = false;
+
+        if (verifications.insurance.isVerified && 
+            verifications.inspection.isVerified && 
+            verifications.custody.isVerified && 
+            verifications.compliance.isVerified) {
+            vote = true;
+        }
+        
+        return vote;
+
     } catch (error) {
         console.error("Error parsing submission JSON:", error);
         return false;
