@@ -1,14 +1,15 @@
 import { namespaceWrapper } from "@_koii/namespace-wrapper";
 
 export async function submission(roundNumber) {
-  /**
-   * Submit the task proofs for auditing
-   * Must return a string of max 512 bytes to be submitted on chain
-   */
-  try {
-    console.log(`MAKE SUBMISSION FOR ROUND ${roundNumber}`);
-    return await namespaceWrapper.storeGet("value");
-  } catch (error) {
-    console.error("MAKE SUBMISSION ERROR:", error);
-  }
+    console.log(`Submitting verification data for Round ${roundNumber}`);
+    
+    const verifications = {
+        insurance: await namespaceWrapper.storeGet("insurance"),
+        inspection: await namespaceWrapper.storeGet("inspection"),
+        custody: await namespaceWrapper.storeGet("custody"),
+        compliance: await namespaceWrapper.storeGet("compliance")
+    };
+    
+    // Ensure the data returned is valid JSON
+    return JSON.stringify(verifications);
 }

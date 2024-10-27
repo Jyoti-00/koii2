@@ -1,10 +1,19 @@
 import { namespaceWrapper } from "@_koii/namespace-wrapper";
 
 export async function audit(submission, roundNumber, submitterKey) {
-  /**
-   * Audit a submission
-   * This function should return true if the submission is correct, false otherwise
-   */
-  console.log(`AUDIT SUBMISSION FOR ROUND ${roundNumber} from ${submitterKey}`);
-  return submission === "Hello, World!";
+    console.log(`Auditing submission for Round ${roundNumber}`);
+    
+    try {
+        // Parse the JSON submission
+        const verifications = JSON.parse(submission);
+
+        // Ensure each verification is confirmed as `true`
+        return verifications.insurance.isVerified && 
+               verifications.inspection.isVerified && 
+               verifications.custody.isVerified && 
+               verifications.compliance.isVerified;
+    } catch (error) {
+        console.error("Error parsing submission JSON:", error);
+        return false;
+    }
 }

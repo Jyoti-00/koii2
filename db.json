@@ -1,0 +1,7 @@
+{
+    "insurance": { "isVerified": true },
+    "inspection": { "isVerified": true },
+    "custody": { "isVerified": true },
+    "compliance": { "isVerified": true }
+  }
+  
