@@ -1,70 +1,26 @@
-# Koii Task Template
+**Overview
 
-## Development Guide
+This project is a Trustless Escrow decentralized application (dApp) built on the Koii Network, designed to facilitate secure, transparent, and verifiable high-value transactions. The application simulates real-world escrow scenarios by validating each step in a transaction lifecycle, such as insurance verification, inspection, custody, and compliance. We've also incorporated a KPL Mind Token to reward users, incentivizing active participation and creating a dynamic ecosystem.
 
-First time writing a task? Start with the [Development Guide](https://github.com/koii-network/ezsandbox).
+**Features
 
-## Task Flow
+Trustless Escrow Transactions: Our dApp enables high-value transactions (e.g., luxury goods or real estate) where third-party verifications are required for added security and trust.
+KPL Mind Token: Integrated token rewards system that encourages user engagement.
+Node Verification: Distributed nodes in the Koii network validate transaction steps through verification rounds, allowing for consensus without needing centralized control.
+Simulated Data and Mock Verification: The project currently uses mock data to simulate the real-world functions of an escrow transaction, focusing on steps like insurance verification, inspection, custody confirmation, and compliance checks.
+Technologies
 
-Tasks operate within a periodic structure known as 'rounds'. Each round consists of the following steps:
+Koii Network: Utilizes the Koii ecosystem for decentralized transactions and task validation.
+Node.js: Powers the backend for task management and dApp logic.
+Express.js: Provides the structure and routing for the dApp API.
+KPL Mind Token: Rewards mechanism designed to incentivize user participation within the ecosystem.
+Project Structure
 
-1. **Perform the Task:** Execute the necessary actions for the round.
-2. **Audit Work:** Review the work completed by other nodes.
-3. **Rewards and Penalties:** Distribute rewards and apply penalties as necessary.
+src/: Contains the core task files for initializing, verifying, submitting, and auditing transactions.
+mock data: Included to simulate real-world data for testing and development.
+Koii Integration: Links to Koii's testnet and utilizes EZ Sandbox tools for debugging and deployment.
+Getting Started
 
-For more detailed information about the task flow, refer to [the runtime flow documentation](https://docs.koii.network/concepts/what-are-tasks/what-are-tasks/gradual-consensus).
-
-Looking to bring better structure to your task? Explore our [Task Organizer](https://www.figma.com/community/file/1220194939977550205/Task-Outline) for better organization.
-
-## Tips
-
-- Always ensure your secret files, such as `.env` files, are secure! Implement a robust `.gitignore` strategy.
-- Continue innovating with Koii!
-
-Should you encounter any issues, don't hesitate to reach out by opening a ticket on [Discord](https://discord.gg/koii-network).
-
-## Environment Requirements
-
-- [Node >=16.0.0](https://nodejs.org)
-- [Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
-
-## Tool Requirements
-
-- [Koii CLI Suite](https://docs.koii.network/develop/command-line-tool/koii-cli/install-cli)
-- [Create Task CLI](https://docs.koii.network/develop/command-line-tool/create-task-cli/install)
-
-## Available Scripts
-
-
-Simulate rounds using simulateTask.js.
-
-```sh
-yarn test
-```
-
-Runs Jest unit tests.
-
-```sh
-yarn jest-test
-```
-
-
-Builds the project and generates the main script: `dist/main.js`.
-
-```sh
-yarn webpack
-```
-
-Runs the live debugger (must have the task running in the desktop node).
-
-```sh
-yarn prod-debug
-```
-
-## Runtime Options
-
-There are two ways to run your task during development:
-
-1. With `GLOBAL_TIMERS="true"` (refer to `.env.local.example`) - When this option is enabled, IPC calls are made by calculating the average time slots of all tasks running on your node.
-
-2. With `GLOBAL_TIMERS="false"` - This option allows for manual calls to K2 and disables the automatic triggers for round management on K2. Transactions are only accepted during the correct time period. Instructions for manual calls can be found in [Manual K2 Calls](./Manual%20K2%20Calls.md).
+**Prerequisites
+Node.js and Yarn should be installed.
+Koii Desktop Node for task submission and verification.
